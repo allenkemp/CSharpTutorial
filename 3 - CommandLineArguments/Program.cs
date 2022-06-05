@@ -30,7 +30,7 @@
 // Let's get started with our program by preparing an array that holds some 
 // fun responses for us to pick from when we want to respond to the user's question
 
-string[] responses = 
+string[] responses =
 {
     "It is certain.",       "Reply hazy, try again.",     "Don’t count on it.",
     "It is decidedly so.",  "Ask again later.",           "My reply is no.",
@@ -46,15 +46,21 @@ string[] responses =
 // This code is gonna look a little complex, don't sweat the details here, just know
 // we are randomly picking a number between 0 and one less than the length of our array.
 
-int selectedIndex = new Random().Next(responses.Length -1);
+int selectedIndex = new Random().Next(responses.Length - 1);
 
 // Now, Let's grab our user's question from the command line arguments.
 // There are several ways to do this, i'm going to build a string by using a loop.
-
-string question= "";
+// Example comand line arguments: What is the meaning of life
+string question = "";
 foreach (var arg in args)
 {
     question += (arg + " ");
+    //How our string is built
+    //q = "" => q = What 
+    //q = "What " => "What is "
+    //q = "What is " => "What is the "
+    // ....
+    // q = "What is the meaning of life "
 }
 
 // Now i'm gonna to write the user's question out to the command line, along with our answer.
